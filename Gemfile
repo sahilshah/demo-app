@@ -6,9 +6,16 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3-ruby','1.2.5', :group => :development
-gem 'sqlite3'
+# gem 'sqlite3', group => :development
 
-gem 'pg', :group => :production
+# gem 'pg', :group => :production
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :assets do
   gem 'sass-rails', "  ~> 3.2.3"
